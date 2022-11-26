@@ -9,10 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3203c23-84f6-492f-b254-460c0a13556c" name="Changes" comment="Сalculations">
+    <list default="true" id="e3203c23-84f6-492f-b254-460c0a13556c" name="Changes" comment="Error">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/duties.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/resources/DOMExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/resources/Rates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Сalculations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Сalculations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Сalculations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/resources/Сalculations.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +29,7 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="AnnotationType" />
+        <option value="Tag Library Descriptor" />
         <option value="Class" />
       </list>
     </option>
@@ -31,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Server" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -82,11 +88,24 @@
       <recent name="D:\Univer\3kurs\курсач 3сем\Customs_Clearance" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.DOMExample">
     <configuration name="ClientMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
       <module name="Customs_Clearance" />
       <option name="VM_PARAMETERS" value="--module-path C:\Maven\javafx-sdk-19\lib --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DOMExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.resources.DOMExample" />
+      <module name="Customs_Clearance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="client.resources.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -98,6 +117,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DOMExample" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -116,7 +140,7 @@
       <workItem from="1668437243692" duration="31000" />
       <workItem from="1669129855338" duration="1291000" />
       <workItem from="1669367563902" duration="3393000" />
-      <workItem from="1669469295545" duration="2821000" />
+      <workItem from="1669469295545" duration="12307000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1668106805290</created>
@@ -167,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669469345430</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Error">
+      <created>1669472581730</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669472581730</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +225,7 @@
     <MESSAGE value="ComboBox" />
     <MESSAGE value="RadioButton" />
     <MESSAGE value="Сalculations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сalculations" />
+    <MESSAGE value="Error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Error" />
   </component>
 </project>
