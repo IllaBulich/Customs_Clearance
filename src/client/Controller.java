@@ -1,6 +1,7 @@
 package client;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -10,11 +11,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
 
 public class Controller {
+
+    @FXML
+    private Text Info;
+
+    @FXML
+    private Text Info1;
+
+    @FXML
+    private Text Info2;
 
     @FXML
     private ResourceBundle resources;
@@ -50,10 +59,10 @@ public class Controller {
     private RadioButton getRadioButton4;
 
     @FXML
-    private TextField getTextFild1;
+    private NumberTextField getTextFild1;
 
     @FXML
-    private TextField getTextFild2;
+    private NumberTextField getTextFild2;
 
     @FXML
     private ToggleGroup human;
@@ -76,12 +85,24 @@ public class Controller {
             Text.setVisible(true);
         }
     }
-
     @FXML
     void initialize() {
         getComboBox.setItems(FXCollections.observableArrayList("$","€"));
         getData.setOnAction(actionEvent -> {
-            System.out.println("FFFFFFFFFF");
+            if(getRadioButton1.isSelected()) {
+                Сalculations calc = new Сalculations(
+                        Integer.parseInt(getTextFild1.getText()),
+                        getDatePicker.getValue(),
+                        Integer.parseInt(getTextFild2.getText())
+                );
+                System.out.println(calc.PhysicalCalc());
+            }
+            else {
+                int text = Integer.parseInt(getTextFild2.getText());
+                System.out.println(text);
+
+            }
+
         });
     }
 
