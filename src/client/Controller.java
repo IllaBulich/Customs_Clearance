@@ -202,7 +202,7 @@ public class Controller {
         }
         if (getRadioButton2.isSelected()) {
             if (getRadioButton3.isSelected() || getRadioButton4.isSelected()) {
-            } else errorMessage += "1Не указана тип двигателя!\n";
+            } else errorMessage += "Не указана тип двигателя!\n";
 
         }
         if (errorMessage.length() == 0) {

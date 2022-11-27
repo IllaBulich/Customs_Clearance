@@ -33,7 +33,7 @@ public class Сalculations {
         DocumentBuilder builder = factory.newDocumentBuilder();
 
         // Запарсили XML, создав структуру Document. Теперь у нас есть доступ ко всем элементам, каким нам нужно.
-        Document document = builder.parse(new File("src/client/duties.xml"));
+        Document document = builder.parse(new File("src/client/resources/duties.xml"));
 
         // Получение списка всех элементов employee внутри корневого элемента (getDocumentElement возвращает ROOT элемент XML файла).
         this.employeeElements = document.getDocumentElement().getElementsByTagName("table");
