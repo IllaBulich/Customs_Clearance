@@ -1,26 +1,93 @@
 package client.resources;
 
-import java.time.LocalDate;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
+import java.io.IOException;
+import java.util.Objects;
 
 public class Сalculations {
 
     private int cost;
-    private LocalDate date;
+    private float age;
     private int volume;
     private String currency;
+    private NodeList employeeElements;
 
-    public Сalculations(int cost, LocalDate date, int volume, String currency) {
+    public Сalculations(int cost,float age, int volume, String currency) throws ParserConfigurationException, IOException, SAXException {
         this.cost = cost;
-        this.date = date;
+        this.age = age;
         this.volume = volume;
         this.currency = currency;
+        // Получение фабрики, чтобы после получить билдер документов.
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+
+        // Получили из фабрики билдер, который парсит XML, создает структуру Document в виде иерархического дерева.
+        DocumentBuilder builder = factory.newDocumentBuilder();
+
+        // Запарсили XML, создав структуру Document. Теперь у нас есть доступ ко всем элементам, каким нам нужно.
+        Document document = builder.parse(new File("src/client/duties.xml"));
+
+        // Получение списка всех элементов employee внутри корневого элемента (getDocumentElement возвращает ROOT элемент XML файла).
+        this.employeeElements = document.getDocumentElement().getElementsByTagName("period");
     }
 
     public int PhysicalCalc(){
-        int cum=0;
-        cum += this.cost*0.03+volume*0.5;
-        return cum;
+        // Перебор всех элементов employee
+        for (int i = 0; i < employeeElements.getLength(); i++) {
+            Node employee = employeeElements.item(i);
+
+            // Получение атрибутов каждого элемента
+            NamedNodeMap attributesYaer = employee.getAttributes();
+
+
+            NodeList attributesParent = employee.getChildNodes();
+
+            System.out.println( attributesYaer.getNamedItem("yearsMax").getNodeValue());
+
+            if (Logics(attributesYaer,"yearsMin","yearsMax", age))
+
+                for (int j = 0; j < attributesParent.getLength(); j++) {
+                    if (!attributesParent.item(j).getNodeName().equals("#text")) {
+                        NamedNodeMap attributes = attributesParent.item(j).getAttributes();
+
+                        if (!Objects.equals(attributes.getNamedItem("volumeMin").getNodeValue(), "null")){
+                            if (Logics(attributes,"volumeMin","volumeMax" , volume)){
+                                return (int) (volume * Float.parseFloat(attributes.getNamedItem("bid").getNodeValue()));
+                            }
+                        }
+                        else {
+                            if (Logics(attributes,"priceMin","priceMax",cost)){
+                                return (int) Math.max(cost * Float.parseFloat(attributes.getNamedItem("fromCost").getNodeValue()),
+                                        volume * Float.parseFloat(attributes.getNamedItem("bid").getNodeValue()));
+                            }
+                        }
+
+                    }
+
+                }
+
+        }
+
+
+        return 0;
     }
+
+    private boolean Logics(NamedNodeMap attr ,String attributesMin,String attributesMax, float x){
+        if (Integer.parseInt(attr.getNamedItem(attributesMin).getNodeValue()) < x &&
+                Objects.equals(attr.getNamedItem(attributesMax).getNodeValue(), "null") ||
+                x <= Integer.parseInt(attr.getNamedItem(attributesMax).getNodeValue()))
+            return true;
+        else return false;
+    }
+
 
 
 }

@@ -9,15 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3203c23-84f6-492f-b254-460c0a13556c" name="Changes" comment="Error">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/duties.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/resources/DOMExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/resources/Rates.java" afterDir="false" />
+    <list default="true" id="e3203c23-84f6-492f-b254-460c0a13556c" name="Changes" comment="парсиегхуй">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Сalculations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/resources/Сalculations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/duties.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/duties.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/resources/DOMExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/resources/DOMExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/resources/Сalculations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/resources/Сalculations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +86,7 @@
       <recent name="D:\Univer\3kurs\курсач 3сем\Customs_Clearance" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DOMExample">
+  <component name="RunManager" selected="Application.ClientMain">
     <configuration name="ClientMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
       <module name="Customs_Clearance" />
@@ -140,7 +138,8 @@
       <workItem from="1668437243692" duration="31000" />
       <workItem from="1669129855338" duration="1291000" />
       <workItem from="1669367563902" duration="3393000" />
-      <workItem from="1669469295545" duration="12307000" />
+      <workItem from="1669469295545" duration="25536000" />
+      <workItem from="1669564147782" duration="7174000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1668106805290</created>
@@ -198,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669472581730</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="парсиег">
+      <created>1669496490517</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669496490517</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +232,7 @@
     <MESSAGE value="RadioButton" />
     <MESSAGE value="Сalculations" />
     <MESSAGE value="Error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Error" />
+    <MESSAGE value="парсиег" />
+    <option name="LAST_COMMIT_MESSAGE" value="парсиег" />
   </component>
 </project>

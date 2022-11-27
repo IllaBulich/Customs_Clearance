@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <duties>
     <period yearsMin="0" yearsMax="3">
-        <rates volumeMin="0" volumeMax="0" priceMin="0" priceMax="8.500" fromCost="0.54" bid="2.5"/>
-        <rates volumeMin="0" volumeMax="0" priceMin="8.501" priceMax="16.700" fromCost="0.48" bid="3.5"/>
-        <rates volumeMin="0" volumeMax="0" priceMin="16.700" priceMax="42.300" fromCost="0.48" bid="5.5"/>
-        <rates volumeMin="0" volumeMax="0" priceMin="42.300" priceMax="84.500" fromCost="0.48" bid="7.5"/>
-        <rates volumeMin="0" volumeMax="0" priceMin="84.500" priceMax="169.000" fromCost="0.48" bid="15"/>
-        <rates volumeMin="0" volumeMax="0" priceMin="169.000" priceMax="0" fromCost="0.48" bid="20"/>
+        <rates volumeMin="null" volumeMax="null" priceMin="0" priceMax="8500" fromCost="0.54" bid="2.5"/>
+        <rates volumeMin="null" volumeMax="null" priceMin="8501" priceMax="16700" fromCost="0.48" bid="3.5"/>
+        <rates volumeMin="null" volumeMax="null" priceMin="16700" priceMax="42300" fromCost="0.48" bid="5.5"/>
+        <rates volumeMin="null" volumeMax="null" priceMin="42300" priceMax="84500" fromCost="0.48" bid="7.5"/>
+        <rates volumeMin="null" volumeMax="null" priceMin="84500" priceMax="169000" fromCost="0.48" bid="15"/>
+        <rates volumeMin="null" volumeMax="null" priceMin="169000" priceMax="null" fromCost="0.48" bid="20"/>
     </period>
     <period yearsMin="3" yearsMax="5">
-        <rates volumeMin="0" volumeMax="1000" priceMin="0" priceMax="0" fromCost="0" bid="1.5" />
-        <rates volumeMin="1001" volumeMax="1500" priceMin="0" priceMax="0" fromCost="0" bid="1.7" />
-        <rates volumeMin="1501" volumeMax="1800" priceMin="0" priceMax="0" fromCost="0" bid="2.5" />
-        <rates volumeMin="1801" volumeMax="2300" priceMin="0" priceMax="0" fromCost="0" bid="2.7" />
-        <rates volumeMin="2300" volumeMax="3000" priceMin="0" priceMax="0" fromCost="0" bid="3" />
-        <rates volumeMin="3000" volumeMax="0" priceMin="0" priceMax="0" fromCost="0" bid="3.6" />
+        <rates volumeMin="0" volumeMax="1000" priceMin="null" priceMax="null" fromCost="null" bid="1.5" />
+        <rates volumeMin="1001" volumeMax="1500" priceMin="null" priceMax="null" fromCost="null" bid="1.7" />
+        <rates volumeMin="1501" volumeMax="1800" priceMin="null" priceMax="null" fromCost="null" bid="2.5" />
+        <rates volumeMin="1801" volumeMax="2300" priceMin="null" priceMax="null" fromCost="null" bid="2.7" />
+        <rates volumeMin="2300" volumeMax="3000" priceMin="null" priceMax="null" fromCost="null" bid="3" />
+        <rates volumeMin="3000" volumeMax="null" priceMin="null" priceMax="null" fromCost="null" bid="3.6" />
     </period>
-    <period yearsMin="5" yearsMax="0">
-        <rates volumeMin="0" volumeMax="1000" priceMin="0" priceMax="0" fromCost="0" bid="3" />
-        <rates volumeMin="1001" volumeMax="1500" priceMin="0" priceMax="0" fromCost="0" bid="3.2" />
-        <rates volumeMin="1501" volumeMax="1800" priceMin="0" priceMax="0" fromCost="0" bid="3.5" />
-        <rates volumeMin="1801" volumeMax="2300" priceMin="0" priceMax="0" fromCost="0" bid="4.8" />
-        <rates volumeMin="2300" volumeMax="3000" priceMin="0" priceMax="0" fromCost="0" bid="5" />
-        <rates volumeMin="3000" volumeMax="0" priceMin="0" priceMax="0" fromCost="0" bid="5.7" />
+    <period yearsMin="5" yearsMax="null">
+        <rates volumeMin="0" volumeMax="1000" priceMin="null" priceMax="null" fromCost="null" bid="3" />
+        <rates volumeMin="1001" volumeMax="1500" priceMin="null" priceMax="null" fromCost="null" bid="3.2" />
+        <rates volumeMin="1501" volumeMax="1800" priceMin="null" priceMax="null" fromCost="null" bid="3.5" />
+        <rates volumeMin="1801" volumeMax="2300" priceMin="null" priceMax="null" fromCost="null" bid="4.8" />
+        <rates volumeMin="2300" volumeMax="3000" priceMin="null" priceMax="null" fromCost="null" bid="5" />
+        <rates volumeMin="3000" volumeMax="null" priceMin="null" priceMax="null" fromCost="null" bid="5.7" />
     </period>
 </duties>

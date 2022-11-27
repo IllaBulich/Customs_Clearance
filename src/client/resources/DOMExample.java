@@ -28,25 +28,23 @@ public class DOMExample {
         Document document = builder.parse(new File("src/client/duties.xml"));
 
         // Получение списка всех элементов employee внутри корневого элемента (getDocumentElement возвращает ROOT элемент XML файла).
-        NodeList employeeElements = document.getDocumentElement().getElementsByTagName("rates");
+        NodeList employeeElements = document.getDocumentElement().getElementsByTagName("period");
 
         // Перебор всех элементов employee
         for (int i = 0; i < employeeElements.getLength(); i++) {
             Node employee = employeeElements.item(i);
-            Node employeeParent = employee.getParentNode();
             // Получение атрибутов каждого элемента
             NamedNodeMap attributes = employee.getAttributes();
-            NamedNodeMap attributesParent = employeeParent.getAttributes();
-            System.out.println( attributesParent.getNamedItem("yearsMin").getNodeValue());
-            // Добавление сотрудника. Атрибут - тоже Node, потому нам нужно получить значение атрибута с помощью метода getNodeValue()
-            employees.add(new Rates(
-                    Float.parseFloat(attributes.getNamedItem("volumeMin").getNodeValue()),
-                    Float.parseFloat(attributes.getNamedItem("volumeMax").getNodeValue()),
-                    Float.parseFloat(attributes.getNamedItem("priceMin").getNodeValue()),
-                    Float.parseFloat(attributes.getNamedItem("priceMax").getNodeValue()),
-                    Float.parseFloat(attributes.getNamedItem("fromCost").getNodeValue()),
-                    Float.parseFloat(attributes.getNamedItem("bid").getNodeValue())
-            ));
+            NodeList attributesParent = employee.getChildNodes();
+            System.out.println( attributes.getNamedItem("yearsMin").getNodeValue());
+            for (int j = 0; j < attributesParent.getLength(); j++) {
+                if (attributesParent.item(j).getNodeName() != "#text") {
+                    NamedNodeMap attributes1 = attributesParent.item(j).getAttributes();
+                    System.out.println(attributes1.getNamedItem("volumeMin").getNodeValue());
+                }
+
+            }
+
         }
 
         // Вывод информации о каждом сотруднике
