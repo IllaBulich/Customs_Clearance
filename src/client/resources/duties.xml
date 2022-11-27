@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<duties>
+    <table engine="null" yearsMin="0" yearsMax="3">
+        <rates volumeMin="null" volumeMax="null" priceMin="0" priceMax="8500" fromCost="0.54" bid="2.5"/>
+        <rates volumeMin="null" volumeMax="null" priceMin="8501" priceMax="16700" fromCost="0.48" bid="3.5"/>
+        <rates volumeMin="null" volumeMax="null" priceMin="16700" priceMax="42300" fromCost="0.48" bid="5.5"/>
+        <rates volumeMin="null" volumeMax="null" priceMin="42300" priceMax="84500" fromCost="0.48" bid="7.5"/>
+        <rates volumeMin="null" volumeMax="null" priceMin="84500" priceMax="169000" fromCost="0.48" bid="15"/>
+        <rates volumeMin="null" volumeMax="null" priceMin="169000" priceMax="null" fromCost="0.48" bid="20"/>
+    </table>
+    <table engine="null" yearsMin="3" yearsMax="5">
+        <rates volumeMin="0" volumeMax="1000" priceMin="null" priceMax="null" fromCost="null" bid="1.5"/>
+        <rates volumeMin="1000" volumeMax="1500" priceMin="null" priceMax="null" fromCost="null" bid="1.7"/>
+        <rates volumeMin="1500" volumeMax="1800" priceMin="null" priceMax="null" fromCost="null" bid="2.5"/>
+        <rates volumeMin="1800" volumeMax="2300" priceMin="null" priceMax="null" fromCost="null" bid="2.7"/>
+        <rates volumeMin="2300" volumeMax="3000" priceMin="null" priceMax="null" fromCost="null" bid="3"/>
+        <rates volumeMin="3000" volumeMax="null" priceMin="null" priceMax="null" fromCost="null" bid="3.6"/>
+    </table>
+    <table engine="null" yearsMin="5" yearsMax="null">
+        <rates volumeMin="0" volumeMax="1000" priceMin="null" priceMax="null" fromCost="null" bid="3"/>
+        <rates volumeMin="1000" volumeMax="1500" priceMin="null" priceMax="null" fromCost="null" bid="3.2"/>
+        <rates volumeMin="1500" volumeMax="1800" priceMin="null" priceMax="null" fromCost="null" bid="3.5"/>
+        <rates volumeMin="1800" volumeMax="2300" priceMin="null" priceMax="null" fromCost="null" bid="4.8"/>
+        <rates volumeMin="2300" volumeMax="3000" priceMin="null" priceMax="null" fromCost="null" bid="5"/>
+        <rates volumeMin="3000" volumeMax="null" priceMin="null" priceMax="null" fromCost="null" bid="5.7"/>
+    </table>
+
+    <table engine="petrol" yearsMin="0" yearsMax="3">
+        <rates volumeMin="0" volumeMax="1000" fromCost="0.3" bid="1.2"/>
+        <rates volumeMin="1000" volumeMax="1500" fromCost="0.3" bid="1.45"/>
+        <rates volumeMin="1500" volumeMax="1800" fromCost="0.3" bid="1.5"/>
+        <rates volumeMin="1800" volumeMax="2300" fromCost="0.3" bid="2.15"/>
+        <rates volumeMin="2300" volumeMax="3000" fromCost="0.3" bid="2.15"/>
+        <rates volumeMin="3000" volumeMax="null" fromCost="0.3" bid="2.8"/>
+    </table>
+    <table engine="petrol" yearsMin="3" yearsMax="5">
+        <rates volumeMin="0" volumeMax="1000" fromCost="0.35" bid="1.2"/>
+        <rates volumeMin="1000" volumeMax="1500" fromCost="0.35" bid="1.45"/>
+        <rates volumeMin="1500" volumeMax="1800" fromCost="0.35" bid="1.5"/>
+        <rates volumeMin="1800" volumeMax="2300" fromCost="0.35" bid="2.15"/>
+        <rates volumeMin="2300" volumeMax="3000" fromCost="0.35" bid="2.15"/>
+        <rates volumeMin="3000" volumeMax="null" fromCost="0.35" bid="2.8"/>
+    </table>
+    <table engine="petrol" yearsMin="5" yearsMax="null">
+        <rates volumeMin="0" volumeMax="1000" fromCost="null" bid="2.5"/>
+        <rates volumeMin="1000" volumeMax="1500" fromCost="null" bid="2.7"/>
+        <rates volumeMin="1500" volumeMax="1800" fromCost="null" bid="2.9"/>
+        <rates volumeMin="1800" volumeMax="2300" fromCost="null" bid="4.0"/>
+        <rates volumeMin="2300" volumeMax="3000" fromCost="null" bid="4.0"/>
+        <rates volumeMin="3000" volumeMax="null" fromCost="null" bid="5.8"/>
+    </table>
+
+    <table engine="diesel" yearsMin="0" yearsMax="3">
+        <rates volumeMin="0" volumeMax="1500" fromCost="0.3" bid="1.45"/>
+        <rates volumeMin="1500" volumeMax="2500" fromCost="0.3" bid="2.15"/>
+        <rates volumeMin="2500" volumeMax="null" fromCost="0.3" bid="2.8"/>
+    </table>
+    <table engine="diesel" yearsMin="3" yearsMax="5">
+        <rates volumeMin="0" volumeMax="1500" fromCost="0.35" bid="1.45"/>
+        <rates volumeMin="1500" volumeMax="2500" fromCost="0.35" bid="2.15"/>
+        <rates volumeMin="2500" volumeMax="null" fromCost="0.35" bid="2.8"/>
+    </table>
+    <table engine="diesel" yearsMin="5" yearsMax="null">
+        <rates volumeMin="0" volumeMax="1500" fromCost="null" bid="2.7"/>
+        <rates volumeMin="1500" volumeMax="2500" fromCost="null" bid="4"/>
+        <rates volumeMin="2500" volumeMax="null" fromCost="null" bid="5.8"/>
+    </table>
+</duties>

@@ -49,17 +49,17 @@
          </toggleGroup>
       </RadioButton>
       <RadioButton fx:id="getRadioButton4" layoutX="365.0" layoutY="318.0" mnemonicParsing="false" onAction="#getEngine" prefHeight="18.0" prefWidth="134.0" text="Дизельный" toggleGroup="$engine" visible="false" />
-      <Text fx:id="Info" fill="RED" layoutX="70.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="476.5367431640625">
+      <Text fx:id="Info" fill="RED" layoutX="63.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="476.5367431640625">
          <font>
             <Font name="Agency FB" size="17.0" />
          </font>
       </Text>
-      <Text fx:id="Info1" fill="RED" layoutX="70.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="476.5367431640625">
+      <Text fx:id="Info1" fill="RED" layoutX="63.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="476.5367431640625">
          <font>
             <Font name="Agency FB" size="17.0" />
          </font>
       </Text>
-      <Text fx:id="Info2" fill="RED" layoutX="70.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="476.5367431640625">
+      <Text fx:id="Info2" fill="RED" layoutX="63.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="476.5367431640625">
          <font>
             <Font name="Agency FB" size="17.0" />
          </font>
