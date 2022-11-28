@@ -1,4 +1,4 @@
-package client.resources;
+package server.density;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
-public class Сalculations {
+public class Calculations {
 
     private int cost;
     private float age;
@@ -21,7 +21,7 @@ public class Сalculations {
 
     private NodeList employeeElements;
 
-    public Сalculations(int cost, float age, int volume) throws ParserConfigurationException, IOException, SAXException {
+    public Calculations(int cost, float age, int volume) throws ParserConfigurationException, IOException, SAXException {
         this.cost = cost;
         this.age = age;
         this.volume = volume;
@@ -33,7 +33,7 @@ public class Сalculations {
         DocumentBuilder builder = factory.newDocumentBuilder();
 
         // Запарсили XML, создав структуру Document. Теперь у нас есть доступ ко всем элементам, каким нам нужно.
-        Document document = builder.parse(new File("src/client/resources/duties.xml"));
+        Document document = builder.parse(new File("src/server/density/duties.xml"));
 
         // Получение списка всех элементов employee внутри корневого элемента (getDocumentElement возвращает ROOT элемент XML файла).
         this.employeeElements = document.getDocumentElement().getElementsByTagName("table");

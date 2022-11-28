@@ -1,21 +1,21 @@
 package client;
 
-import client.resources.Сalculations;
+import TCP.TCPConnection;
+import TCP.TCPConnectionListener;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.net.URL;
 import java.time.LocalDate;
-import java.util.ResourceBundle;
 
-public class Controller {
-    Сalculations calc;
+public class Controller implements TCPConnectionListener {
+
+    int message;
+    TCPConnection connection;
     float well = (float) 0.9688;
     String[] list = new String[]{
             "Январь",
@@ -40,12 +40,6 @@ public class Controller {
     private Text Info2;
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
     private Text Text;
 
     @FXML
@@ -55,7 +49,7 @@ public class Controller {
     private ComboBox<String> getComboBox;
 
     @FXML
-    private Button getData;
+    private Button Start;
 
     @FXML
     private ComboBox<String> getMonth;
@@ -83,6 +77,9 @@ public class Controller {
     @FXML
     private ToggleGroup human;
 
+    public Controller() throws IOException {
+    }
+
     @FXML
     void getEngine(ActionEvent event) {
 
@@ -102,6 +99,37 @@ public class Controller {
         }
     }
 
+    public void onToSendClick(MouseEvent mouseEvent) {
+        if (isInputValid()) {
+            LocalDate date = LocalDate.now();
+            if (getRadioButton1.isSelected()) {
+                connection.sendMessage(Message(date, "null"));
+                Info.setVisible(true);
+                Info2.setVisible(false);
+                Info1.setVisible(false);
+                //Info.setText("Сумма таможенной пошлины составит: " + message + " € (" + (int) (message / well) + " $)");
+            } else {
+                if (getRadioButton3.isSelected()) {
+                    connection.sendMessage(Message(date, "petrol"));
+                } else if (getRadioButton4.isSelected()) {
+                    connection.sendMessage(Message(date, "diesel"));
+                }
+                Info.setVisible(true);
+                Info2.setVisible(true);
+                Info1.setVisible(true);
+            }
+        }
+    }
+
+    public void onExitClicked(MouseEvent mouseEvent) {
+        try {
+            connection = new TCPConnection(this, "127.0.0.1", 8189);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Start.setVisible(false);
+    }
+
     @FXML
     void initialize() {
         getComboBox.setItems(FXCollections.observableArrayList("$", "€"));
@@ -116,71 +144,14 @@ public class Controller {
             getYear.getItems().add(String.valueOf(i));
         }
         getYear.setValue(String.valueOf(date.getYear()));
-        getData.setOnAction(actionEvent -> {
-            if (isInputValid()) {
-                if (getRadioButton1.isSelected()) {
-                    Physical(date);
-                } else {
-                    Legal(date);
-
-                }
-            }
-        });
     }
 
-    private void Physical(LocalDate date) {
-        try {
-            calc = new Сalculations(
-                    (getComboBox.getValue() == "$") ? (int) (Integer.parseInt(getTextFild2.getText()) * well) : Integer.parseInt(getTextFild2.getText()),
-                    date.getYear() - Integer.parseInt(getYear.getValue()) + (float) (date.getMonthValue() - intMonth(getMonth.getValue())) / 12,
-                    Integer.parseInt(getTextFild1.getText())
+    private String Message(LocalDate date, String engineType) {
 
-            );
-
-        } catch (ParserConfigurationException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (SAXException e) {
-            throw new RuntimeException(e);
-        }
-        int cost = calc.PhysicalCalc();
-        Info.setVisible(true);
-        Info2.setVisible(false);
-        Info1.setVisible(false);
-        Info.setText("Сумма таможенной пошлины составит: " + cost + " € (" + (int) (cost / well) + " $)");
-    }
-
-    private void Legal(LocalDate date) {
-        int price =(getComboBox.getValue() == "$") ? (int) (Integer.parseInt(getTextFild2.getText()) * well) : Integer.parseInt(getTextFild2.getText());
-        try {
-            calc = new Сalculations(
-                    price,
-                    date.getYear() - Integer.parseInt(getYear.getValue()) + (float) (date.getMonthValue() - intMonth(getMonth.getValue())) / 12,
-                    Integer.parseInt(getTextFild1.getText())
-
-            );
-
-        } catch (ParserConfigurationException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (SAXException e) {
-            throw new RuntimeException(e);
-        }
-        int cost=0;
-        if (getRadioButton3.isSelected()) {
-            cost = calc.LegalPetrol("petrol");
-        } else if (getRadioButton4.isSelected()) {
-            cost = calc.LegalPetrol("diesel");
-        }
-        int NDS = (int) ((cost + price)*0.2);
-        Info.setVisible(true);
-        Info2.setVisible(true);
-        Info1.setVisible(true);
-        Info.setText("Сумма таможенной пошлины составит: " + cost + " € (" + (int) (cost / well) + " $)");
-        Info1.setText("Сумма НДС: " + NDS +" € (" + (int) (NDS / well) + " $)");
-        Info2.setText("Итого: " + (cost+NDS) + " € (" + (int) ((cost+NDS) / well) + " $)");
+        int cost = (getComboBox.getValue() == "$") ? (int) (Integer.parseInt(getTextFild2.getText()) * well) : Integer.parseInt(getTextFild2.getText());
+        float age = date.getYear() - Integer.parseInt(getYear.getValue()) + (float) (date.getMonthValue() - intMonth(getMonth.getValue())) / 12;
+        int volume = Integer.parseInt(getTextFild1.getText());
+        return engineType + "-" + cost + "-" + age + "-" + volume;
 
     }
 
@@ -228,6 +199,36 @@ public class Controller {
         return 1;
     }
 
+    @Override
+    public void onConnectionReady(TCPConnection tcpConnection) {
+
+    }
+
+    @Override
+    public void onReceiveString(TCPConnection tcpConnection, String value) {
+
+        message = Integer.parseInt(value);
+        if (getRadioButton1.isSelected()) {
+            Info.setText("Сумма таможенной пошлины составит: " + message + " € (" + (int) (message / well) + " $)");
+        } else {
+            int price = (getComboBox.getValue() == "$") ? (int) (Integer.parseInt(getTextFild2.getText()) * well) : Integer.parseInt(getTextFild2.getText());
+            int NDS = (int) ((message + price) * 0.2);
+            Info.setText("Сумма таможенной пошлины составит: " + message + " € (" + (int) (message / well) + " $)");
+            Info1.setText("Сумма НДС: " + NDS + " € (" + (int) (NDS / well) + " $)");
+            Info2.setText("Итого: " + (message + NDS) + " € (" + (int) ((message + NDS) / well) + " $)");
+        }
+
+    }
+
+    @Override
+    public void onDisconnect(TCPConnection tcpConnection) {
+
+    }
+
+    @Override
+    public void onExeption(TCPConnection tcpConnection, Exception e) {
+
+    }
 }
 
 
